@@ -5,6 +5,8 @@ import { FormsModule } from '@angular/forms';
 import { HomePage } from './home.page';
 
 import { HomePageRoutingModule } from './home-routing.module';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { RickandmortyService } from './rickandmorty.service';
 
 
 @NgModule({
@@ -12,8 +14,10 @@ import { HomePageRoutingModule } from './home-routing.module';
     CommonModule,
     FormsModule,
     IonicModule,
-    HomePageRoutingModule
+    HomePageRoutingModule,
+    HttpClientModule, //se llama a este modulo 
   ],
+  providers:[RickandmortyService], //se llama al servicio que se utilizara en el componente
   declarations: [HomePage]
 })
 export class HomePageModule {}
