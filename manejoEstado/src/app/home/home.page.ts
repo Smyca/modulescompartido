@@ -24,6 +24,8 @@ export class HomePage implements OnInit {
             next:(respuestaApi:any)=>{
               console.log(respuestaApi);
               this.items=respuestaApi.results
+              //persistencia de datos
+              localStorage.setItem('personajes',JSON.stringify(respuestaApi.results))
             },
             error:(err)=>{
               console.log(err);
